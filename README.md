@@ -1,22 +1,12 @@
 # One-Piece-Website
-Comissioned by a friend
+Commissioned by a friend
 
-# Features
+## Features
 
-# Pages
+- Straw Hat crew profiles
+- Character search
+- A sortable top-ten bounty board
 
-The home page will simply be introducing the straw hats.
+## Data sources
 
-There will be a search bar that will act as a wiki of sorts. It will allow you to search for anything, like a devil fruit, a user, a pirate, etc.
-
-# bounties
-
-a page, using this js, that allows a user to sort between highest -> lowest bounty, and vice versa.
-
-const res = await fetch("https://onepieceapi.com/api/bounties");
-const data = await res.json();
-console.log(data);
-
-# top 10 characters
-
-a simple drag and drop for your favourite characters.
+Character details and bounty amounts are loaded from the [One Piece API](https://api.api-onepiece.com/v2/characters/en). Portraits use the public character image files hosted by [OnePieceAPI](https://www.onepieceapi.com/). Bounties are sorted in the browser because the separate bounty endpoint does not allow cross-origin browser requests.

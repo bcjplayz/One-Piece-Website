@@ -3,55 +3,66 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>One Piece Crew</title>
+    <meta name="description" content="Meet the Straw Hat Pirates and explore One Piece character bounties.">
+    <title>One Piece</title>
     <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
   </head>
   <body>
-    <header>
-      <h1>One Piece Website</h1>
-      <p>A place to explore the Straw Hat Pirates and the world of One Piece.</p>
-      <nav>
-        <a href="#straw-hats">The Straw Hats</a>
-        <a href="#wiki">Wiki Search</a>
+    <header class="site-header">
+      <div class="header-copy">
+        <p class="kicker">A story told for nearly 30 years, loved (and hated) by many.</p>
+        <h1>Straw Hats</h1>
+        <p class="intro">A crew of followers dedicated to finding the mythical treasure of Gol. D. Roger</p>
+      </div>
+      <nav aria-label="Main navigation">
+        <a href="#crew">Straw Hats</a>
+        <a href="#search">Characters</a>
         <a href="#bounties">Bounties</a>
-        <a href="#favorites">Favorites</a>
       </nav>
     </header>
 
     <main>
-      <section id="straw-hats">
-        <h2>Meet the Straw Hats</h2>
-        <p>Follow Monkey D. Luffy and his crew on their adventure to find the One Piece.</p>
-        <ul>
-          <li>Monkey D. Luffy</li>
-          <li>Roronoa Zoro</li>
-          <li>Nami</li>
-          <li>Usopp</li>
-          <li>Sanji</li>
-          <li>Chopper</li>
-          <li>Nico Robin</li>
-          <li>Franky</li>
-          <li>Brook</li>
-          <li>Jinbe</li>
-        </ul>
+      <section id="crew" class="page-section">
+        <div class="section-heading">
+          <div>
+            <h2>Straw Hats</h2>
+        <div id="crew-list" class="character-grid" aria-live="polite">
+          <p class="status-message">Loading the crew…</p>
+        </div>
       </section>
 
-      <section id="wiki">
-        <h2>Explore the One Piece Wiki</h2>
-        <p>Search for characters, pirates, Devil Fruits, and more.</p>
-        <label for="wiki-search">Search</label>
-        <input id="wiki-search" type="search" placeholder="Search One Piece">
+      <section id="search" class="page-section">
+        <div class="section-heading">
+            <h2>Find a character</h2>
+        </div>
+        <label class="search-label" for="character-search">Name</label>
+        <input id="character-search" type="search" placeholder="Try “Monkey D Luffy”" autocomplete="off">
+        <div id="search-results" class="character-grid search-results" aria-live="polite">
+        </div>
       </section>
 
-      <section id="bounties">
-        <h2>Bounties</h2>
-        <p>Check out character bounties and compare the highest and lowest amounts.</p>
-      </section>
-
-      <section id="favorites">
-        <h2>Your Top 10 Characters</h2>
-        <p>Pick your favorite One Piece characters and make your own top ten.</p>
+      <section id="bounties" class="page-section">
+        <div class="section-heading bounty-heading">
+          <div>
+            <h2>Bounty board</h2>
+          </div>
+          <label class="sort-label" for="bounty-sort">
+            Sort
+            <select id="bounty-sort">
+              <option value="high">Highest first</option>
+              <option value="low">Lowest first</option>
+            </select>
+          </label>
+        </div>
+        <ol id="bounty-list" class="bounty-list" aria-live="polite">
+          <li class="status-message">Loading bounties…</li>
+        </ol>
       </section>
     </main>
+
+    <footer>
+      <p>Character and bounty data from <a href="https://api.api-onepiece.com/" target="_blank" rel="noreferrer">One Piece API</a>. Portraits hosted by <a href="https://www.onepieceapi.com/" target="_blank" rel="noreferrer">OnePieceAPI</a>.</p>
+    </footer>
   </body>
 </html>
